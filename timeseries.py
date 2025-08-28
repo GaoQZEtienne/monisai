@@ -27,7 +27,7 @@ counts = (
            .sort_values(["分类名称", "出现次数", "单品名称"], ascending=[True, False, True])
 )
 
-ordered_cols = [(r["分类名称"], r["单品名称"]) for _, r in counts.iterrows() if r["出现次数"] >= 20]
+ordered_cols = [(r["分类名称"], r["单品名称"]) for _, r in counts.iterrows() if r["出现次数"] >= 30]
 
 pivot = pivot.reindex(columns=pd.MultiIndex.from_tuples(ordered_cols))
 
